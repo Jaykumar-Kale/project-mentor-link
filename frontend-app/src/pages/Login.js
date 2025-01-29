@@ -1,31 +1,33 @@
 
-
-// import { useState } from "react";
-// import axios from "axios";
-
 function Login() {
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-
-//   const handleLogin = async () => {
-//     try {
-//       const response = await axios.post("http://localhost:5000/api/login", {
-//         email,
-//         password,
-//       });
-//       console.log("Login successful", response.data);
-//     } catch (error) {
-//       console.error("Login failed", error);
-//     }
-//   };
-
   return (
-    <div>
-      <h2>Login</h2>
-      <input type="email" placeholder="Email"  />
-      <input type="password" placeholder="Password"  />
-      <button >Login</button>
+    // <div>
+    //   <h2>Login</h2>
+    //   <input type="email" placeholder="Email"  />
+    //   <input type="password" placeholder="Password"  />
+    //   <button >Login</button>
+    // </div>
+
+    <div class="container mt-5">
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">Login</div>
+            <div class="card-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="loginEmail" class="form-label"> Email </label>
+                        <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email" required />
+                    </div> 
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label"> Password </label>
+                        <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required />
+                    </div>
+                    <button type="submit" class="btn btn-primary"> Login </button>
+                </form>
+            </div>
+        </div>
     </div>
+
+
   );
 }
 
