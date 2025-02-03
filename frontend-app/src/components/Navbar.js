@@ -14,6 +14,7 @@ function Navbar() {
         <li><Link to="/MentorProfile">Mentor Profile</Link></li>
         <li><Link to="/MenteeProfile">Mentee Profile</Link></li>
         <li><Link to="/AdminDashboard">Admin Dashboard</Link></li>
+        <li><Link to="/textform">Text Form </Link></li>
       </ul>
     </nav>
   );
