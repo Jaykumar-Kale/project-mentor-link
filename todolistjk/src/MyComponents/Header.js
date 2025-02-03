@@ -1,39 +1,70 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+// This is header component.
+// Importing things.
+
+import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-
+// Here we passing props as an argument.
 export default function Header(props) {
-    return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
-          <Link className="navbar-brand" to="/">{props.title}</Link>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/about">About</Link>
-              </li>  
-            </ul>
-            { props.searchBar? <form className="d-flex">
-              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-              <button className="btn btn-outline-success" type="submit">Search</button>
-            </form>: ""}
-          </div>
+  return (
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="container-fluid">
+        <Link className="navbar-brand" to="/">
+          {props.title}
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link className="nav-link active" aria-current="page" to="/">
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/about">
+                About
+              </Link>
+            </li>
+          </ul>
+          {props.searchBar ? (
+            <form className="d-flex">
+              <input
+                className="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button className="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          ) : (
+            ""
+          )}
         </div>
-      </nav>
-    )
-}
-Header.defaultProps = {
-  title: "Your Title Here",
-  searchBar: true
+      </div>
+    </nav>
+  );
 }
 
+// this is important concept because jr apan title nasen tr default props by default title set kartat.
+Header.defaultProps = {
+  title: "This is your by Default Title.",
+  searchBar: true, // by default search bar pahyje ki nako he ithe mention hot.
+};
+
+// Prop types hi concept pn immp ahe it plays massive role.
 Header.propTypes = {
   title: PropTypes.string,
-  searchBar: PropTypes.bool.isRequired
-}
+  searchBar: PropTypes.bool.isRequired,
+};
