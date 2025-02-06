@@ -1,43 +1,31 @@
 /*
-  Project name;
-  Dsc:
-  2 Buttons  ( Register and Login)
+  Task:
+  1. Project name;
+  2. Dsc:
+  3. 2 Buttons  ( Register and Login)
 */
 
-function Home() {
-    return (
-      <div>
-        <h1>Welcome to Mentor Management System</h1>
-        <p>Find the best mentors to guide you</p>
+import React from "react";
+import "./Home.css";
 
-        <p> This is jk</p>
+const Home = () => {
+  return (
+    <div className="home container">
+      <div className="home-text">
+        <h1>Welcome to Mentor-Link </h1>
+        <p>
+          Find the best mentors to guide you, Mentor-Link Provids you the Best
+          fit Mentor For You According to Your Interset. You can Choose Any
+          Mentor According To Your Tech-Stack or Skills. Mentor's Plays Very
+          Crucial Role In Our Carrer So Choose The Right Mentor With
+          Mentor-Link.
+        </p>
+
+        <button className="btn"> Register </button>
+        <button className="btn"> Login </button>
       </div>
-    );
-  }
-  
-  export default Home;
+    </div>
+  );
+};
 
-
-
-
-  
-// import React from "react";
-// import "./Home.css";
-// import dark_arrow from '../../Images/dark-arrow.png'
-
-// const Home = () => {
-//   return (
-//     <div className="home container">
-//       <div className='home-text'>
-//         <h1>Welcome to Mentor Management System</h1>
-//         <p>
-//         Find the best mentors to guide you.
-//         </p>
-//         <button className="btn">Explore more <img src={dark_arrow} alt="" /></button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Home;
-
+export default Home;

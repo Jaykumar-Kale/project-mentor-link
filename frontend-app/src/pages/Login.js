@@ -1,13 +1,7 @@
 
 function Login() {
   return (
-    // <div>
-    //   <h2>Login</h2>
-    //   <input type="email" placeholder="Email"  />
-    //   <input type="password" placeholder="Password"  />
-    //   <button >Login</button>
-    // </div>
-
+    
     <div class="container mt-5">
         <div class="card mb-4">
             <div class="card-header bg-primary text-white">Login</div>

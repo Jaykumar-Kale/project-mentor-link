@@ -1,12 +1,9 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
-function Footer() {
+const Footer = () => {
   return (
-    <nav>
-      <h2>Copy Right (Footer Section)</h2>
-      
-    </nav>
+      <h2> This is Footer Section</h2>
   );
-}
+};
 
 export default Footer;

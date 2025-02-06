@@ -4,11 +4,12 @@
     width: 100%;
     min-height: 100vh;
     background: linear-gradient(rgba(8, 0, 58, 0.7), rgba(8, 0, 58, 0.7)),
-      url("../../Images/mentorShip_Home.jpg");
-    background-size: cover;
+      url('../images/mentorShip_Home.jpg');
+    background-size:inherit;  
+    /* background-size: cover; */
     background-position: centre;
     color: #fff;
-  
+    
     display:flex;
     align-items: center;
     justify-content: centre;
@@ -29,4 +30,8 @@
       margin : 10px auto 20px ;
       line-height: 1.4;
   
+  }
+
+  .btn {
+    margin-right: 10px;
   }
