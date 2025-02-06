@@ -10,7 +10,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import TextFrom from "./pages/textFrom";
+
 
 function App() {
   return (
@@ -18,10 +18,6 @@ function App() {
     <Router>
 
       <Navbar /> 
-
-      <div className="container my-3">
-        <TextFrom heading="Text Area" />
-      </div>
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -31,7 +27,6 @@ function App() {
         <Route path="/mentorprofile" element={<MentorProfile />} />
         <Route path="/menteeprofile" element={<MenteeProfile />} />
         <Route path="/admindashboard" element={<AdminDashboard />} />
-        <Route path="/textform" element={<TextFrom />} />
 
       </Routes>
 

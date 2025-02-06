@@ -6,18 +6,18 @@ function Navbar() {
   return (
     <nav>
       <h2>Mentor Management</h2>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/login">Login</Link></li>
-        <li><Link to="/Register">Register</Link></li>
-        <li><Link to="/Dashboard">Dashboard</Link></li>
-        <li><Link to="/MentorProfile">Mentor Profile</Link></li>
-        <li><Link to="/MenteeProfile">Mentee Profile</Link></li>
-        <li><Link to="/AdminDashboard">Admin Dashboard</Link></li>
-        <li><Link to="/textform">Text Form </Link></li>
-      </ul>
+      <div className="navbar" >
+        <Link to="/">Home</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/Register">Register</Link>
+        <Link to="/Dashboard">Dashboard</Link>
+        <Link to="/MentorProfile">Mentor Profile</Link>
+        <Link to="/MenteeProfile">Mentee Profile</Link>
+        <Link to="/AdminDashboard">Admin Dashboard</Link>
+        <Link to="/textform">Text Form </Link>
+      </div>
     </nav>
   );
 }
 
-export default Navbar;
+export default Navbar;
