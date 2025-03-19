@@ -8,6 +8,8 @@ import Register from "./pages/Register";
 import MenteeProfile from "./pages/MenteeProfile";
 import MentorProfile from "./pages/MentorProfile";
 import AdminDashboard from "./pages/AdminDashboard";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
