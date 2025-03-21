@@ -26,6 +26,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-{/* <Link to="/login"><button className='btn'> Login </button></Link> */}

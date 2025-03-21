@@ -24,8 +24,8 @@ nav ul li {
    list-style: none;
    margin: 5px 20px;
    font-size : 12px;
-   /* align-items : centre; */
-   /* justify-content : space-between; */
+   align-items : centre;
+   justify-content : space-between;
 }   
 
 .dark-nav {
