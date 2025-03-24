@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/mentees")
-@CrossOrigin("*")
+//@CrossOrigin("*")
 public class MenteeController {
 
     @Autowired
@@ -25,6 +25,8 @@ public class MenteeController {
     public List<Mentee> getAllMentees() {
         return menteeRepository.findAll();
     }
+
+    
 
     @GetMapping("/{id}")
     public Mentee getMentee(@PathVariable Long id) {
@@ -48,3 +50,5 @@ public class MenteeController {
         menteeRepository.deleteById(id);
     }
 }
+
+
