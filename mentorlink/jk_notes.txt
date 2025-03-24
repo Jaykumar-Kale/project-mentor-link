@@ -1,0 +1,6 @@
+1. Spring Boot cmd madhe run karanayasathi chi command.
+
+        cd /d "D:\6. Git-Hub\project-mentor-link\mentorlink"
+        mvn spring-boot:run
+
+2. Till yet Spring Boot + MySql setup zala ahe need to work on frontend as well.
