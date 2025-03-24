@@ -1,17 +1,16 @@
-
-// package: com.mentorlink.model
-
+// src/main/java/com/mentorlink/model/Mentor.java
 package com.mentorlink.model;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Mentor {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -1,7 +1,5 @@
 
-
-// package: com.mentorlink.controller
-
+// src/main/java/com/mentorlink/controller/MentorController.java
 package com.mentorlink.controller;
 
 import com.mentorlink.model.Mentor;
@@ -13,22 +11,37 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/mentors")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*") // Allow frontend to connect
 public class MentorController {
 
     @Autowired
     private MentorRepository mentorRepository;
+
+    @GetMapping
+    public List<Mentor> getAllMentors() {
+        return mentorRepository.findAll();
+    }
 
     @PostMapping
     public Mentor createMentor(@RequestBody Mentor mentor) {
         return mentorRepository.save(mentor);
     }
 
-    @GetMapping
-    public List<Mentor> getAllMentors() {
-        return mentorRepository.findAll();
+    @PutMapping("/{id}")
+    public Mentor updateMentor(@PathVariable Long id, @RequestBody Mentor mentor) {
+        Mentor existing = mentorRepository.findById(id).orElseThrow();
+        existing.setName(mentor.getName());
+        existing.setEmail(mentor.getEmail());
+        existing.setExpertise(mentor.getExpertise());
+        return mentorRepository.save(existing);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteMentor(@PathVariable Long id) {
+        mentorRepository.deleteById(id);
     }
 }
+
 
 
 
