@@ -3,6 +3,10 @@
         cd /d "D:\6. Git-Hub\project-mentor-link\mentorlink"
         mvn spring-boot:run
 
+        
+        mvn clean package
+
+
 2. Vite uses npm run dev, not npm start.
 
 

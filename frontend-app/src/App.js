@@ -1,7 +1,6 @@
-
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios"; // Importing Axios for API Calls
 
 // Importing Pages
 import Home from "./pages/Home";
@@ -18,12 +17,27 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 // Importing Components
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import MenteeList from "./components/MenteeList"; // Importing MenteeList Component
 
 const App = () => {
+  const [mentees, setMentees] = useState([]); // State to store mentees data
+
+  // Fetch mentees from Spring Boot backend
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/api/mentees") // Update this URL according to your backend API
+      .then((response) => {
+        setMentees(response.data); // Store data in state
+      })
+      .catch((error) => {
+        console.error("Error fetching mentees:", error);
+      });
+  }, []);
+
   return (
     <Router>
       <Navbar />
-      <main style={{ minHeight: '100vh', padding: '20px' }}>
+      <main className="min-h-screen p-5 bg-gray-100">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -35,6 +49,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/mentees" element={<MenteeList mentees={mentees} />} /> {/* Passing mentees data */}
         </Routes>
       </main>
       <Footer />
