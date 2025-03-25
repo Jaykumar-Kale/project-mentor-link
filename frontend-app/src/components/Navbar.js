@@ -1,27 +1,18 @@
-import { Link } from "react-router-dom";
 
+// Navbar.js
+import { Link } from "react-router-dom";
 import React from "react";
-import "./Navbar.css";
-import logo from "../images/project-logo.webp";
 
 const Navbar = () => {
   return (
-    <>
-      <nav className="container dark-nav">
-      <img src={logo} alt="" className="logo" />
-      
-        <ul>
-          <li><Link to="/"> Home </Link></li>
-          <li><Link to="/login"> Login </Link></li>
-          <li><Link to="/Register"> Register </Link></li>
-          <li><Link to="/Dashboard"> Dashboard </Link></li>
-          <li><Link to="/MentorProfile"> Mentor Profile </Link></li>
-          <li><Link to="/MenteeProfile"> Mentee Profile </Link></li>
-          <li><Link to="/AdminDashboard"> Admin Dashboard </Link></li>
-          </ul>
-
-      </nav>
-    </>
+    <nav style={{ display: 'flex', justifyContent: 'space-between', padding: '10px', backgroundColor: '#1e40af', color: 'white' }}>
+      <Link to="/" style={{ color: 'white', fontWeight: 'bold' }}>MentorLink</Link>
+      <ul style={{ display: 'flex', gap: '15px' }}>
+        <li><Link to="/login" style={{ color: 'white' }}>Login</Link></li>
+        <li><Link to="/register" style={{ color: 'white' }}>Register</Link></li>
+        <li><Link to="/dashboard" style={{ color: 'white' }}>Dashboard</Link></li>
+      </ul>
+    </nav>
   );
 };
 

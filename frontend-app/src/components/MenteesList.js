@@ -1,5 +1,5 @@
 
-
+// MenteesList.js
 import React, { useEffect, useState } from "react";
 import { getMentees } from "../services/api";
 
@@ -13,12 +13,12 @@ const MenteesList = () => {
     }, []);
 
     return (
-        <div className="p-6 bg-gray-100 min-h-screen">
-            <h2 className="text-2xl font-bold text-blue-600 mb-4">Mentees List</h2>
-            <ul className="bg-white shadow-md rounded-lg p-4">
+        <div style={{ padding: '20px', minHeight: '100vh', backgroundColor: '#f3f4f6' }}>
+            <h2 style={{ color: '#1e40af' }}>Mentees List</h2>
+            <ul style={{ backgroundColor: 'white', padding: '20px', borderRadius: '10px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}>
                 {mentees.map(mentee => (
-                    <li key={mentee.id} className="p-2 border-b border-gray-200 last:border-none">
-                        <span className="font-semibold">{mentee.name}</span> - {mentee.email}
+                    <li key={mentee.id} style={{ padding: '10px', borderBottom: '1px solid gray' }}>
+                        <strong>{mentee.name}</strong> - {mentee.email}
                     </li>
                 ))}
             </ul>

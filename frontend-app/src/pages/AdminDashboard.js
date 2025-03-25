@@ -1,16 +1,17 @@
-
+// AdminDashboard.js
 function AdminDashboard() {
-    return (
-      <div>
-        <h1>Admin Dashboard</h1>
-        <h1>Admin profile conatins -- user Request
-          1. Add User.
-          2. Update user.
-          3. Delete user.
-          4. view user.
-        </h1>
-      </div>
-    );
-  }
-  
-  export default AdminDashboard;
+  return (
+    <div>
+      <h1>Admin Dashboard</h1>
+      <h2>Admin profile contains user management actions:</h2>
+      <ul>
+        <li>Add User</li>
+        <li>Update User</li>
+        <li>Delete User</li>
+        <li>View Users</li>
+      </ul>
+    </div>
+  );
+}
+
+export default AdminDashboard;
