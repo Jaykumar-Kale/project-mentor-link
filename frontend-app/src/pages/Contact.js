@@ -7,8 +7,8 @@ const Contact = () => {
       <h1>Contact Us</h1>
       <p>Have any questions? Reach out to us:</p>
       <ul>
-        <li>Email: support@mentorlink.com</li>
-        <li>Phone: +91 98765 43210</li>
+        <li>Email: jaykumarkale1412@gmail.com</li>
+        <li>Phone: +91 8010620388</li>
         <li>Address: Pune, Maharashtra, India</li>
       </ul>
     </div>

@@ -6,8 +6,8 @@
 
 import React from "react";
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
-import "./Login.css";
-import { Button, Form } from 'react-bootstrap';
+//import "./Login.css";
+//import { Button, Form } from 'react-bootstrap';
 
 const Login = () => {
   return (
