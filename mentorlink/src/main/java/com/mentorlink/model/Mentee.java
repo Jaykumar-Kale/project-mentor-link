@@ -1,20 +1,17 @@
-
-
-package com.mentorlink.model;
-
 import jakarta.persistence.*;
-import lombok.*;
 
 @Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Mentee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
-    private String email;
-    private String course;
+    
+    // Default constructor
+    public Mentee() {}
+
+    // Constructor with ID
+    public Mentee(Long id) {
+        this.id = id;
+    }
 }

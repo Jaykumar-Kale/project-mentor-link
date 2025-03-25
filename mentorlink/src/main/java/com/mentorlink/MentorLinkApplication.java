@@ -1,11 +1,12 @@
+
 package com.mentorlink;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MentorLinkApplication {
+public class MentorlinkApplication {
     public static void main(String[] args) {
-        SpringApplication.run(MentorLinkApplication.class, args);
+        SpringApplication.run(MentorlinkApplication.class, args);
     }
 }

@@ -1,31 +1,48 @@
 import { Link } from "react-router-dom";
-import React from "react";
+import { useState } from "react";
+import { Menu, Moon, Sun } from "lucide-react";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => setDarkMode(!darkMode);
+  const toggleMenu = () => setIsOpen(!isOpen);
+
   return (
-    <nav style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px 20px", backgroundColor: "#1e40af", color: "white" }}>
-      {/* Brand Logo */}
-      <Link to="/" style={{ color: "white", fontSize: "1.5rem", fontWeight: "bold" }}>
-        MentorLink
-      </Link>
+    <nav className={`p-4 shadow-md ${darkMode ? "bg-gray-900 text-white" : "bg-blue-600 text-white"}`}>
+      <div className="container mx-auto flex justify-between items-center">
+        {/* Logo */}
+        <Link to="/" className="text-xl font-bold">MentorLink</Link>
 
-      {/* Navigation Links */}
-      <ul style={{ display: "flex", gap: "20px", listStyle: "none", margin: 0, padding: 0 }}>
-        <li><Link to="/" style={{ color: "white", textDecoration: "none" }}>Home</Link></li>
-        <li><Link to="/about" style={{ color: "white", textDecoration: "none" }}>About</Link></li>
-        <li><Link to="/contact" style={{ color: "white", textDecoration: "none" }}>Contact</Link></li>
-        <li><Link to="/privacy-policy" style={{ color: "white", textDecoration: "none" }}>Privacy Policy</Link></li>
-        <li><Link to="/dashboard" style={{ color: "white", textDecoration: "none" }}>Dashboard</Link></li>
-        <li><Link to="/mentorprofile" style={{ color: "white", textDecoration: "none" }}>Mentor Profile</Link></li>
-        <li><Link to="/menteeprofile" style={{ color: "white", textDecoration: "none" }}>Mentee Profile</Link></li>
-        <li><Link to="/admindashboard" style={{ color: "white", textDecoration: "none" }}>Admin Dashboard</Link></li>
-      </ul>
+        {/* Menu for Large Screens */}
+        <ul className="hidden md:flex gap-6">
+          <li><Link to="/dashboard" className="hover:underline">Dashboard</Link></li>
+          <li><Link to="/mentors" className="hover:underline">Mentors</Link></li>
+          <li><Link to="/mentees" className="hover:underline">Mentees</Link></li>
+          <li><Link to="/about" className="hover:underline">About</Link></li>
+        </ul>
 
-      {/* Authentication Links */}
-      <div style={{ display: "flex", gap: "15px" }}>
-        <Link to="/login" style={{ color: "white", textDecoration: "none", fontWeight: "bold" }}>Login</Link>
-        <Link to="/register" style={{ color: "white", textDecoration: "none", fontWeight: "bold" }}>Register</Link>
+        {/* Dark Mode & Mobile Menu */}
+        <div className="flex items-center gap-4">
+          <button onClick={toggleDarkMode}>
+            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+          <button className="md:hidden" onClick={toggleMenu}>
+            <Menu size={24} />
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <ul className="md:hidden bg-blue-700 text-white p-4 space-y-3">
+          <li><Link to="/dashboard" onClick={toggleMenu}>Dashboard</Link></li>
+          <li><Link to="/mentors" onClick={toggleMenu}>Mentors</Link></li>
+          <li><Link to="/mentees" onClick={toggleMenu}>Mentees</Link></li>
+          <li><Link to="/about" onClick={toggleMenu}>About</Link></li>
+        </ul>
+      )}
     </nav>
   );
 };
